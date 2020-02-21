@@ -1,0 +1,980 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Tell me what day it is today: Tuesday\n",
+      "Wait, today is Tuesday?  I thought it was Monday!\n"
+     ]
+    }
+   ],
+   "source": [
+    "#1a. Prompt the user for a day of the week, and print out whether or not the day is Monday \n",
+    "\n",
+    "prompt = input(\"Tell me what day it is today: \")\n",
+    "\n",
+    "if prompt.lower() == \"monday\":\n",
+    "    print(\"You're right!  Today is Monday!\")\n",
+    "else:\n",
+    "    print(f\"Wait, today is {prompt.capitalize()}?  I thought it was Monday!\")\n",
+    "    \n",
+    "# day = input\n",
+    "# day = day.lower() - to make the casing not matter\n",
+    "# continue prompting user for a good input\n",
+    "# while day not in [list days of the week]:\n",
+    "#     print('please type in the full day of the week.')\n",
+    "#     day = input('what day of the week is it')\n",
+    "#     day = day.lower\n",
+    "# if day.lower() == \"monday\":\n",
+    "#     print(\"today's monday\")\n",
+    "# else:\n",
+    "#     print(f\"today's not monday.  it's {day.capitalize()}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Tell me the day, and I'll tell you if it's a weekend or not: Saturday\n",
+      "That's right, it's Saturday!  Sleeping in!  You know, now that college football season's over.\n"
+     ]
+    }
+   ],
+   "source": [
+    "#1b. Same as above, but tell the user whether or not it is a weekday or a weekend\n",
+    "\n",
+    "weekdays = [\"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\"]\n",
+    "\n",
+    "weekend = [\"Saturday\", \"Sunday\"]\n",
+    "\n",
+    "prompt = input(\"Tell me the day, and I'll tell you if it's a weekend or not: \")\n",
+    "if prompt in weekdays:\n",
+    "    print(f\"{prompt}?  Shoot.  I was hoping today was a weekend...\")\n",
+    "else:\n",
+    "    print(f\"That's right, it's {prompt}!  Sleeping in!  You know, now that football season's over.\")\n",
+    "\n",
+    "# See Ryan's answer in git"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "How many hours did you work this week? 50\n",
+      "And how much do you charge per hour? 32\n",
+      "Overtime?  Nice.  Enjoy your $2400.0!\n"
+     ]
+    }
+   ],
+   "source": [
+    "#1c. create three work-related variables and calculate the paycheck (time + 1/2 for over 40hrs)\n",
+    "\n",
+    "number_of_hours = float(input(\"How many hours did you work this week? \"))\n",
+    "\n",
+    "hourly_rate = float(input(\"And how much do you charge per hour? \"))\n",
+    "\n",
+    "total_pay = (number_of_hours * hourly_rate)\n",
+    "\n",
+    "if number_of_hours <= int(40):\n",
+    "    print(f\"Great job!  Here's ${total_pay}!\")\n",
+    "else:\n",
+    "    print(f\"Overtime?  Nice.  Enjoy your ${total_pay * 1.5}!\")\n",
+    "\n",
+    "# Ryan's answer:\n",
+    "# hours_worked = 51\n",
+    "# hourly_rate = 50\n",
+    "# total = 0\n",
+    "# if hours_worked <= 40:\n",
+    "#     total = hourly_rate * hours_worked\n",
+    "# else:\n",
+    "#     #get the number of hours overtime, calculate overtime and add to 40*regular rate\n",
+    "#     overtime_hours = hours_worked - 40\n",
+    "#     overtime_pay = overtime_hours * 1.5 * hourly_rate\n",
+    "#     regular_pay = 40 * hourly_rate\n",
+    "#     total = regular_pay * overtime_pay\n",
+    "# print(f\"After working {hours_worked} for an hourly rate of {hourly_rate} with overtime.\")\n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "5\n",
+      "6\n",
+      "7\n",
+      "8\n",
+      "9\n",
+      "10\n",
+      "11\n",
+      "12\n",
+      "13\n",
+      "14\n",
+      "15\n"
+     ]
+    }
+   ],
+   "source": [
+    "#While loops\n",
+    "\n",
+    "#2a1:\n",
+    "\n",
+    "i = 5\n",
+    "while i <= 15:\n",
+    "    print(i)\n",
+    "    i += 1\n",
+    "\n",
+    "# i = 5 <- starting point\n",
+    "# end = 15 <- ending point\n",
+    "# while i <= end:\n",
+    "#     print(i)\n",
+    "#     i += 1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 34,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0\n",
+      "2\n",
+      "4\n",
+      "6\n",
+      "8\n",
+      "10\n",
+      "12\n",
+      "14\n",
+      "16\n",
+      "18\n",
+      "20\n",
+      "22\n",
+      "24\n",
+      "26\n",
+      "28\n",
+      "30\n",
+      "32\n",
+      "34\n",
+      "36\n",
+      "38\n",
+      "40\n",
+      "42\n",
+      "44\n",
+      "46\n",
+      "48\n",
+      "50\n",
+      "52\n",
+      "54\n",
+      "56\n",
+      "58\n",
+      "60\n",
+      "62\n",
+      "64\n",
+      "66\n",
+      "68\n",
+      "70\n",
+      "72\n",
+      "74\n",
+      "76\n",
+      "78\n",
+      "80\n",
+      "82\n",
+      "84\n",
+      "86\n",
+      "88\n",
+      "90\n",
+      "92\n",
+      "94\n",
+      "96\n",
+      "98\n",
+      "100\n"
+     ]
+    }
+   ],
+   "source": [
+    "#2a2:\n",
+    "\n",
+    "i = 2\n",
+    "print(0)\n",
+    "while i %2 == 0 and i <= 100:\n",
+    "    print(i)\n",
+    "    i += 2\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 32,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "100\n",
+      "95\n",
+      "90\n",
+      "85\n",
+      "80\n",
+      "75\n",
+      "70\n",
+      "65\n",
+      "60\n",
+      "55\n",
+      "50\n",
+      "45\n",
+      "40\n",
+      "35\n",
+      "30\n",
+      "25\n",
+      "20\n",
+      "15\n",
+      "10\n",
+      "5\n",
+      "0\n",
+      "-5\n",
+      "-10\n"
+     ]
+    }
+   ],
+   "source": [
+    "#2a3:\n",
+    "\n",
+    "i = 100\n",
+    "while i > -15:\n",
+    "    print(i)\n",
+    "    i -= 5\n",
+    "    \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "2\n",
+      "6\n",
+      "42\n",
+      "1806\n"
+     ]
+    }
+   ],
+   "source": [
+    "#2a4\n",
+    "\n",
+    "i = 2\n",
+    "\n",
+    "while i in range(2, 1000000):\n",
+    "    print(i)\n",
+    "    i += i**2\n",
+    "    \n",
+    "# Ryan's answer:\n",
+    "# i = 2\n",
+    "# while i < 1_000_000:\n",
+    "#     print(i)\n",
+    "#     i *= i"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "100\n",
+      "95\n",
+      "90\n",
+      "85\n",
+      "80\n",
+      "75\n",
+      "70\n",
+      "65\n",
+      "60\n",
+      "55\n",
+      "50\n",
+      "45\n",
+      "40\n",
+      "35\n",
+      "30\n",
+      "25\n",
+      "20\n",
+      "15\n",
+      "10\n",
+      "5\n"
+     ]
+    }
+   ],
+   "source": [
+    "i = 100\n",
+    "while i >= 5:\n",
+    "    print(i)\n",
+    "    i -= 5\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Give me a number, and we'll outline the times table through 10: 34\n",
+      "34 x 1 = 34\n",
+      "34 x 2 = 68\n",
+      "34 x 3 = 102\n",
+      "34 x 4 = 136\n",
+      "34 x 5 = 170\n",
+      "34 x 6 = 204\n",
+      "34 x 7 = 238\n",
+      "34 x 8 = 272\n",
+      "34 x 9 = 306\n",
+      "34 x 10 = 340\n"
+     ]
+    }
+   ],
+   "source": [
+    "#2b1 For Loops\n",
+    "\n",
+    "user_number = int(input(\"Give me a number, and we'll outline the times table through 10: \"))\n",
+    "\n",
+    "times_nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\n",
+    "\n",
+    "for num in times_nums:\n",
+    "    total = user_number * num\n",
+    "    print(f\"{user_number} x {num} = \" + str(total))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1\n",
+      "22\n",
+      "333\n",
+      "4444\n",
+      "55555\n",
+      "666666\n",
+      "7777777\n",
+      "88888888\n",
+      "999999999\n"
+     ]
+    }
+   ],
+   "source": [
+    "#2b2 \n",
+    "n = 9\n",
+    "for i in range(1, 10):\n",
+    "    for j in range(1, i+1):\n",
+    "        print(i, end = \"\")\n",
+    "    print()\n",
+    "\n",
+    "# Ryan's answer:\n",
+    "# for i in range(1,10):\n",
+    "#     print(i * str(i))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#2c1\n",
+    "#My answer\n",
+    "# user_number = input(\"Give me an odd number between 1 and 50: \")\n",
+    "# if user_number %2 == 0 or user_number < 1 or user_number > 50:\n",
+    "#     print(\"Please try again: \")\n",
+    "# if user_number.isdigit():\n",
+    "#     user_number = int(user_number)\n",
+    "#     if user_number % 2 == 1 and user_number > 1 and user_number < 50:\n",
+    "#         #print(\"So far, so good!\")\n",
+    "#         for user_number in range(50):\n",
+    "#             print(\"Here is an odd number: \" + str(user_number))                 \n",
+    "#             continue\n",
+    "#         print(f\"Yikes!  Skipping number: {user_number}\")\n",
+    "    \n",
+    "## Got stuck\n",
+    "# Ryan's answer:\n",
+    "# 1.) Get an odd number between 1 and 50:\n",
+    "#     user_choice = input(\"input an odd integer between 1 and 50: \")\n",
+    "#     while (user_choice.isdigit() == False \n",
+    "#           or int(user_choice) < 1 \n",
+    "#           or int(user_choice) %2 == 0\n",
+    "#           or int(user_choice) > 50): # all these continue prompting the user for valid input based on our conditions\n",
+    "#         print(f\"{user_choice} is nice, but we'll ned an odd number between 1 and 50.\")\n",
+    "#         user_choice = input (\"Please input an odd number between 1 and 50\".)\n",
+    "        \n",
+    "#     user_choice = int(user_choice)   \n",
+    "    \n",
+    "#     print(f\"{user_choice} is an odd number between 1 and 50.  Thank you.\")\n",
+    "    \n",
+    "#     print(\"The number to skip is\", user_choice)\n",
+    "    \n",
+    "#     for i in range(1,50):\n",
+    "#         if i % 2 == 0:\n",
+    "#             continue\n",
+    "#         print(f\"{i} is an odd number.\")\n",
+    "#         if i == user_choice:\n",
+    "#             print(f\"Skipping {i}.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "input an odd integer between 1 and 50: 7\n",
+      "7 is an odd number between 1 and 50.  Thank you.\n",
+      "The number to skip is 7\n",
+      "1 is an odd number.\n",
+      "3 is an odd number.\n",
+      "5 is an odd number.\n",
+      "Skipping 7.\n",
+      "9 is an odd number.\n",
+      "11 is an odd number.\n",
+      "13 is an odd number.\n",
+      "15 is an odd number.\n",
+      "17 is an odd number.\n",
+      "19 is an odd number.\n",
+      "21 is an odd number.\n",
+      "23 is an odd number.\n",
+      "25 is an odd number.\n",
+      "27 is an odd number.\n",
+      "29 is an odd number.\n",
+      "31 is an odd number.\n",
+      "33 is an odd number.\n",
+      "35 is an odd number.\n",
+      "37 is an odd number.\n",
+      "39 is an odd number.\n",
+      "41 is an odd number.\n",
+      "43 is an odd number.\n",
+      "45 is an odd number.\n",
+      "47 is an odd number.\n",
+      "49 is an odd number.\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Trying Ryan's answer\n",
+    "user_choice = input(\"input an odd integer between 1 and 50: \")\n",
+    "while (user_choice.isdigit() == False \n",
+    "          or int(user_choice) < 1 \n",
+    "          or int(user_choice) %2 == 0\n",
+    "          or int(user_choice) > 50): # all these continue prompting the user for valid input based on our conditions\n",
+    "    print(f\"{user_choice} is nice, but we'll ned an odd number between 1 and 50.\")\n",
+    "    user_choice = input (\"Please input an odd number between 1 and 50.\")\n",
+    "        \n",
+    "user_choice = int(user_choice)   \n",
+    "    \n",
+    "print(f\"{user_choice} is an odd number between 1 and 50.  Thank you.\")\n",
+    "    \n",
+    "print(\"The number to skip is\", user_choice)\n",
+    "    \n",
+    "for i in range(1,50):\n",
+    "    if i % 2 == 0:\n",
+    "        continue\n",
+    "    \n",
+    "    if i == user_choice:\n",
+    "            print(f\"Skipping {i}.\")\n",
+    "            continue\n",
+    "    print(f\"{i} is an odd number.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "KeyboardInterrupt",
+     "evalue": "",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mKeyboardInterrupt\u001b[0m                         Traceback (most recent call last)",
+      "\u001b[0;32m/usr/local/anaconda3/lib/python3.7/site-packages/ipykernel/kernelbase.py\u001b[0m in \u001b[0;36m_input_request\u001b[0;34m(self, prompt, ident, parent, password)\u001b[0m\n\u001b[1;32m    884\u001b[0m             \u001b[0;32mtry\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 885\u001b[0;31m                 \u001b[0mident\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mreply\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0msession\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mrecv\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mstdin_socket\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;36m0\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    886\u001b[0m             \u001b[0;32mexcept\u001b[0m \u001b[0mException\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m/usr/local/anaconda3/lib/python3.7/site-packages/jupyter_client/session.py\u001b[0m in \u001b[0;36mrecv\u001b[0;34m(self, socket, mode, content, copy)\u001b[0m\n\u001b[1;32m    802\u001b[0m         \u001b[0;32mtry\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 803\u001b[0;31m             \u001b[0mmsg_list\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0msocket\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mrecv_multipart\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mmode\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mcopy\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mcopy\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    804\u001b[0m         \u001b[0;32mexcept\u001b[0m \u001b[0mzmq\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mZMQError\u001b[0m \u001b[0;32mas\u001b[0m \u001b[0me\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m/usr/local/anaconda3/lib/python3.7/site-packages/zmq/sugar/socket.py\u001b[0m in \u001b[0;36mrecv_multipart\u001b[0;34m(self, flags, copy, track)\u001b[0m\n\u001b[1;32m    474\u001b[0m         \"\"\"\n\u001b[0;32m--> 475\u001b[0;31m         \u001b[0mparts\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;34m[\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mrecv\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mflags\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mcopy\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mcopy\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mtrack\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mtrack\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    476\u001b[0m         \u001b[0;31m# have first part already, only loop while more to receive\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32mzmq/backend/cython/socket.pyx\u001b[0m in \u001b[0;36mzmq.backend.cython.socket.Socket.recv\u001b[0;34m()\u001b[0m\n",
+      "\u001b[0;32mzmq/backend/cython/socket.pyx\u001b[0m in \u001b[0;36mzmq.backend.cython.socket.Socket.recv\u001b[0;34m()\u001b[0m\n",
+      "\u001b[0;32mzmq/backend/cython/socket.pyx\u001b[0m in \u001b[0;36mzmq.backend.cython.socket._recv_copy\u001b[0;34m()\u001b[0m\n",
+      "\u001b[0;32m/usr/local/anaconda3/lib/python3.7/site-packages/zmq/backend/cython/checkrc.pxd\u001b[0m in \u001b[0;36mzmq.backend.cython.checkrc._check_rc\u001b[0;34m()\u001b[0m\n",
+      "\u001b[0;31mKeyboardInterrupt\u001b[0m: ",
+      "\nDuring handling of the above exception, another exception occurred:\n",
+      "\u001b[0;31mKeyboardInterrupt\u001b[0m                         Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-6-d5f3024d93e7>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;31m#2c2:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      2\u001b[0m \u001b[0;31m#My answer\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 3\u001b[0;31m \u001b[0muser_num\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0minput\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Give me a positive number and I'll count from zero to that number: \"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      4\u001b[0m \u001b[0;32mfor\u001b[0m \u001b[0mnum\u001b[0m \u001b[0;32min\u001b[0m \u001b[0muser_num\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      5\u001b[0m     \u001b[0;32mif\u001b[0m \u001b[0mnum\u001b[0m \u001b[0;34m<\u001b[0m \u001b[0;36m0\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m/usr/local/anaconda3/lib/python3.7/site-packages/ipykernel/kernelbase.py\u001b[0m in \u001b[0;36mraw_input\u001b[0;34m(self, prompt)\u001b[0m\n\u001b[1;32m    858\u001b[0m             \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_parent_ident\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    859\u001b[0m             \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_parent_header\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 860\u001b[0;31m             \u001b[0mpassword\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;32mFalse\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    861\u001b[0m         )\n\u001b[1;32m    862\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m/usr/local/anaconda3/lib/python3.7/site-packages/ipykernel/kernelbase.py\u001b[0m in \u001b[0;36m_input_request\u001b[0;34m(self, prompt, ident, parent, password)\u001b[0m\n\u001b[1;32m    888\u001b[0m             \u001b[0;32mexcept\u001b[0m \u001b[0mKeyboardInterrupt\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    889\u001b[0m                 \u001b[0;31m# re-raise KeyboardInterrupt, to truncate traceback\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 890\u001b[0;31m                 \u001b[0;32mraise\u001b[0m \u001b[0mKeyboardInterrupt\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    891\u001b[0m             \u001b[0;32melse\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    892\u001b[0m                 \u001b[0;32mbreak\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;31mKeyboardInterrupt\u001b[0m: "
+     ]
+    }
+   ],
+   "source": [
+    "#2c2:\n",
+    "#My answer\n",
+    "user_num = int(input(\"Give me a positive number and I'll count from zero to that number: \"))\n",
+    "for num in user_num: \n",
+    "    if num < 0:\n",
+    "        print(f\"Sorry, but {user_num} is not a positive number.\")\n",
+    "        new_user_num = int(input(\"Please try again: \"))\n",
+    "while user_num >= 0 and user_num in range(0, user_num):\n",
+    "    user_number_count = 0\n",
+    "    user_number += 1\n",
+    "\n",
+    "#Ryan's answer:\n",
+    "# Revisit the loop above\n",
+    "# user_choice = input(\"input a positive number: \")\n",
+    "# while (user_choice.isdigit() == False \n",
+    "#           or int(user_choice) <= 0): \n",
+    "#            # all these continue prompting the user for valid input based on our conditions\n",
+    "#     print(f\"{user_choice} is nice, but we'll need a positive number.\")\n",
+    "#     user_choice = input (\"Please input a positive number.\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0\n",
+      "1\n",
+      "2\n",
+      "3\n",
+      "4\n",
+      "5\n",
+      "6\n",
+      "7\n"
+     ]
+    }
+   ],
+   "source": [
+    "for i in range(user_choice + 1):\n",
+    "    print(i)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#2d2 count backwards from a user-provided num\n",
+    "#Ryan's answer:\n",
+    "while user_choice >= 1:\n",
+    "    print(user_choice)\n",
+    "    user_choice -= 1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1\n",
+      "2\n",
+      "Fizz\n",
+      "4\n",
+      "Buzz\n",
+      "Fizz\n",
+      "7\n",
+      "8\n",
+      "Fizz\n",
+      "Buzz\n",
+      "11\n",
+      "Fizz\n",
+      "13\n",
+      "14\n",
+      "FizzBuzz\n",
+      "16\n",
+      "17\n",
+      "Fizz\n",
+      "19\n",
+      "Buzz\n",
+      "Fizz\n",
+      "22\n",
+      "23\n",
+      "Fizz\n",
+      "Buzz\n",
+      "26\n",
+      "Fizz\n",
+      "28\n",
+      "29\n",
+      "FizzBuzz\n",
+      "31\n",
+      "32\n",
+      "Fizz\n",
+      "34\n",
+      "Buzz\n",
+      "Fizz\n",
+      "37\n",
+      "38\n",
+      "Fizz\n",
+      "Buzz\n",
+      "41\n",
+      "Fizz\n",
+      "43\n",
+      "44\n",
+      "FizzBuzz\n",
+      "46\n",
+      "47\n",
+      "Fizz\n",
+      "49\n",
+      "Buzz\n",
+      "Fizz\n",
+      "52\n",
+      "53\n",
+      "Fizz\n",
+      "Buzz\n",
+      "56\n",
+      "Fizz\n",
+      "58\n",
+      "59\n",
+      "FizzBuzz\n",
+      "61\n",
+      "62\n",
+      "Fizz\n",
+      "64\n",
+      "Buzz\n",
+      "Fizz\n",
+      "67\n",
+      "68\n",
+      "Fizz\n",
+      "Buzz\n",
+      "71\n",
+      "Fizz\n",
+      "73\n",
+      "74\n",
+      "FizzBuzz\n",
+      "76\n",
+      "77\n",
+      "Fizz\n",
+      "79\n",
+      "Buzz\n",
+      "Fizz\n",
+      "82\n",
+      "83\n",
+      "Fizz\n",
+      "Buzz\n",
+      "86\n",
+      "Fizz\n",
+      "88\n",
+      "89\n",
+      "FizzBuzz\n",
+      "91\n",
+      "92\n",
+      "Fizz\n",
+      "94\n",
+      "Buzz\n",
+      "Fizz\n",
+      "97\n",
+      "98\n",
+      "Fizz\n",
+      "Buzz\n"
+     ]
+    }
+   ],
+   "source": [
+    "#3 FizzBuzz\n",
+    "\n",
+    "x = range(1, 101)\n",
+    "\n",
+    "for num in x:\n",
+    "    if num %5 == 0 and num % 3 == 0:\n",
+    "        print(\"FizzBuzz\") # has to go first so that the loop doesn't end at fizz or buzz when divisible by 3 and 5\n",
+    "    elif num %3 == 0:# if divisible by 3, loop ends\n",
+    "        print(\"Fizz\")\n",
+    "    elif num %5 == 0: # if divisible by 5, loop ends\n",
+    "        print(\"Buzz\")\n",
+    "    else:\n",
+    "        print(num)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "input a positive number: 7\n",
+      " number| squared | cubed \n",
+      "1 | 1 | 1\n",
+      "2 | 4 | 8\n",
+      "3 | 9 | 27\n",
+      "4 | 16 | 64\n",
+      "5 | 25 | 125\n",
+      "6 | 36 | 216\n",
+      "7 | 49 | 343\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Table creation lost me.  Ryan's help:\n",
+    "# user_choice = input(\"input a positive number: \")\n",
+    "# while (user_choice.isdigit() == False \n",
+    "#          or int(user_choice) <= 1):       # all these continue prompting the user for valid input based on our conditions\n",
+    "#     print(f\"{user_choice} is nice, but we'll need a positive number.\")\n",
+    "#     user_choice = input (\"Please input a positive number.\")\n",
+    "    \n",
+    "# user_choice = int(user_choice)\n",
+    "\n",
+    "# print(\" number| squared | cubed \")\n",
+    "# for i in range(1, user_choice + 1):\n",
+    "#     print(f\"{i} | {i**2} | {i**3}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "input a positive number: 5\n",
+      " number| squared | cubed \n",
+      "1 | 1 | 1\n",
+      "2 | 4 | 8\n",
+      "3 | 9 | 27\n",
+      "4 | 16 | 64\n",
+      "5 | 25 | 125\n",
+      "Do you want to continue?  Type Y or Yes: y\n",
+      "input a positive number: 4\n",
+      " number| squared | cubed \n",
+      "1 | 1 | 1\n",
+      "2 | 4 | 8\n",
+      "3 | 9 | 27\n",
+      "4 | 16 | 64\n",
+      "Do you want to continue?  Type Y or Yes: da\n"
+     ]
+    }
+   ],
+   "source": [
+    "while True:\n",
+    "    user_choice = input(\"input a positive number: \")\n",
+    "    while (user_choice.isdigit() == False \n",
+    "             or int(user_choice) <= 1):       # all these continue prompting the user for valid input based on our conditions\n",
+    "            print(f\"{user_choice} is nice, but we'll need a positive number.\")\n",
+    "            user_choice = input (\"Please input a positive number.\")\n",
+    "\n",
+    "    user_choice = int(user_choice)\n",
+    "\n",
+    "    print(\" number| squared | cubed \")\n",
+    "    for i in range(1, user_choice + 1):\n",
+    "        print(f\"{i} | {i**2} | {i**3}\")\n",
+    "        \n",
+    "    choice = input(\"Do you want to continue?  Type Y or Yes: \")\n",
+    "    choice = choice.lower()\n",
+    "    if choice not in [\"y\", \"yes\"]:\n",
+    "        break\n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "scrolled": true
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "input a positive number: 69\n",
+      "69 is a C.\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Bonus 5: prompt user for number grade for zero to 100\n",
+    "# convert number grade to letter grade\n",
+    "while True:\n",
+    "    user_choice = input(\"input a positive number: \")\n",
+    "    while (user_choice.isdigit() == False \n",
+    "         or int(user_choice) < 0\n",
+    "         or int(user_choice) >= 100):       # all these continue prompting the user for valid input based on our conditions\n",
+    "        print(f\"{user_choice} is nice, but we'll need a positive number.\")\n",
+    "        user_choice = input (\"Please input a positive number.\")\n",
+    "    \n",
+    "    user_choice = int(user_choice)\n",
+    "    if user_choice >= 88:\n",
+    "        print(f\"{user_choice} is an A.\")\n",
+    "    elif user_choice >=80:\n",
+    "        print(f\"{user_choice} is a B.\")\n",
+    "    elif user_choice >= 67:\n",
+    "        print(f\"{user_choice} is a C.\")\n",
+    "    elif user_choice >= 60:\n",
+    "        print(f\"{user_choice} is a D.\")\n",
+    "    else:\n",
+    "        print(f\"[user_choice] is an F.\")\n",
+    "    \n",
+    "    user_choice = input(\"Do you want to continue? Type y or Yes: \")\n",
+    "    wants_to_stop = user_choice.lower() not in [\"y\", \"yes\"]\n",
+    "    if wants_to_stop:\n",
+    "        break"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "'Visual Display of Quantitative Information' by Edward Tufte is about visualization.\n",
+      "'Deep Learning with Python' by Francois Challot is about deep learning.\n",
+      "'How Charts Lie' by Cario is about visualization.\n"
+     ]
+    }
+   ],
+   "source": [
+    "#6 Bonus\n",
+    "books = [\n",
+    "    {\"title\" : \"Visual Display of Quantitative Information\",\n",
+    "     \"author\" : \"Edward Tufte\",\n",
+    "     \"genre\" : \"visualization\"\n",
+    "    },\n",
+    "    \n",
+    "    {\"title\" : \"Deep Learning with Python\",\n",
+    "     \"author\" : \"Francois Challot\",\n",
+    "     \"genre\" : \"deep learning\"   \n",
+    "    },\n",
+    "    {\"title\" : \"How Charts Lie\",\n",
+    "     \"author\" : \"Cario\", \n",
+    "     \"genre\" : \"visualization\"    \n",
+    "    },\n",
+    "]\n",
+    "for book in books:\n",
+    "    print(f\"'{book['title']}' by {book['author']} is about {book['genre']}.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Here is a list of genres in your available books: \n",
+      "deep learning\n",
+      "visualization\n"
+     ]
+    }
+   ],
+   "source": [
+    "genres = [book[\"genre\"] for book in books]\n",
+    "genres = set(genres)\n",
+    "print(\"Here is a list of genres in your available books: \")\n",
+    "for genre in genres:\n",
+    "    print(genre)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Pleae enter a genre: visualization\n",
+      "Visual Display of Quantitative Information\n",
+      "How Charts Lie\n"
+     ]
+    }
+   ],
+   "source": [
+    "genre = input(\"Pleae enter a genre: \")\n",
+    "for book in books:\n",
+    "    if book[\"genre\"] == genre:\n",
+    "        print(book[\"title\"])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
