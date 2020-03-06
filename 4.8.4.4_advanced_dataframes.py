@@ -59,6 +59,68 @@ mpg["average_mileage"].sort_values()
 mpg.groupby(["manufacturer", "average_mileage"]).sort_values()
 
 
+# In[12]:
+
+
+#2 Joining and Merging
+
+# Copy the users and roles dataframes:
+
+users = pd.DataFrame({
+    'id': [1, 2, 3, 4, 5, 6],
+    'name': ['bob', 'joe', 'sally', 'adam', 'jane', 'mike'],
+    'role_id': [1, 2, 3, 3, np.nan, np.nan]
+})
+users
+
+roles = pd.DataFrame({
+    'id': [1, 2, 3, 4],
+    'name': ['admin', 'author', 'reviewer', 'commenter']
+})
+roles
+
+
+users
+
+
+# In[14]:
+
+
+roles
+
+
+# In[16]:
+
+
+# What do you think a right join would look like?
+
+pd.merge(users, roles, left_on='role_id', right_on='id', how='right')
+
+
+# In[17]:
+
+
+# Compare to left join:
+
+pd.merge(users, roles, left_on='role_id', right_on='id', how='left')
+
+
+# In[18]:
+
+
+# What would it look like with an outer join?
+
+pd.merge(users, roles, left_on='role_id', right_on='id', how='outer')
+
+
+# In[ ]:
+
+
+# What happens if you drop the foriegn keys and try to merge them?
+
+# You can still merge them, but it would have to be along the primary keys
+
+
 # In[6]:
 
 
@@ -173,8 +235,21 @@ url2 = f'mysql+pymysql://{user}:{password}@{host}/titles'
 pd.read_sql("SELECT * FROM titles LIMIT 5 OFFSET 50", url2)
 
 
+# In[21]:
+
+
+#4 Chipotle database fun
+
+from env import host, user, password
+
+url = f'mysql+pymysql://{user}:{password}@{host}/chipotle'
+    
+
+pd.read_sql("SELECT * FROM item_price LIMIT 5 OFFSET 50", url)
+
+
 # In[ ]:
 
 
-#4 
+
 
